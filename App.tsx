@@ -9,27 +9,10 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  StatusBar,
-  View,
-  Dimensions,
-} from 'react-native';
-import {LineChart} from 'react-native-chart-kit';
+import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
+import Chart from './src/components/chart';
 
 const App = () => {
-  const chartConfig = {
-    backgroundGradientFrom: '#1E2923',
-    backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: '#08130D',
-    backgroundGradientToOpacity: 0.5,
-    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-    strokeWidth: 2, // optional, default 3
-    barPercentage: 0.5,
-    useShadowColorFromDataset: false, // optional
-  };
-
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June'],
     datasets: [
@@ -41,21 +24,11 @@ const App = () => {
     ],
     legend: ['Rainy Days'], // optional
   };
-
-  const screenWidth = Dimensions.get('window').width;
-
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.mainContainer}>
-        <View>
-          <LineChart
-            data={data}
-            width={screenWidth}
-            height={220}
-            chartConfig={chartConfig}
-          />
-        </View>
+        <Chart data={data} />
       </SafeAreaView>
     </>
   );

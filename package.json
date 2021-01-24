@@ -10,9 +10,11 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "apisauce": "^2.0.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-chart-kit": "^6.10.0",
+    "react-native-config": "^1.4.2",
     "react-native-svg": "^12.1.0",
     "react-native-webview": "^11.2.0"
   },
